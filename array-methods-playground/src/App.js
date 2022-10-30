@@ -1,25 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Array from "./components/Array";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="border border-green-900 grid place-items-center container mt-10 p-10 mx-auto h-full ">
+			<h1 className="text-xl">Array Methods Playground</h1>
+			<Array />
+		</div>
+	);
 }
 
 export default App;
