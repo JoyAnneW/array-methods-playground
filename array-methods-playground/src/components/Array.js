@@ -4,6 +4,7 @@ import Push from "./Push";
 import Pop from "./Pop";
 import Unshift from "./Unshift";
 import Shift from "./Shift";
+import Splice from "./Splice";
 
 export default function Array() {
 	const [array, setArray] = useState(["A"]);
@@ -31,6 +32,7 @@ export default function Array() {
 				<Unshift nextLetter={nextLetter} array={array} setArray={setArray} />
 				<Pop array={array} setArray={setArray} />
 				<Shift array={array} setArray={setArray} />
+				<Splice array={array} setArray={setArray} />
 			</div>
 		</div>
 	);
