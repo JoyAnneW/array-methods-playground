@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import ArrayItem from "./ArrayItem";
 import Push from "./Push";
 import Pop from "./Pop";
+import Unshift from "./Unshift";
+import Shift from "./Shift";
 
 export default function Array() {
 	const [array, setArray] = useState(["A"]);
@@ -26,7 +28,9 @@ export default function Array() {
 
 			<div className="flex gap-5 mt-10">
 				<Push nextLetter={nextLetter} array={array} setArray={setArray} />
+				<Unshift nextLetter={nextLetter} array={array} setArray={setArray} />
 				<Pop array={array} setArray={setArray} />
+				<Shift array={array} setArray={setArray} />
 			</div>
 		</div>
 	);
