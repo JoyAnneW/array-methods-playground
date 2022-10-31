@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ArrayItem from "./ArrayItem";
 import Push from "./Push";
+import Pop from "./Pop";
 
 export default function Array() {
 	const [array, setArray] = useState(["A"]);
@@ -23,7 +24,10 @@ export default function Array() {
 				<div className=" text-9xl text-orange-500">]</div>
 			</div>
 
-			<Push nextLetter={nextLetter} array={array} setArray={setArray} />
+			<div className="flex gap-5 mt-10">
+				<Push nextLetter={nextLetter} array={array} setArray={setArray} />
+				<Pop array={array} setArray={setArray} />
+			</div>
 		</div>
 	);
 }
