@@ -14,20 +14,21 @@ export default function Array() {
 		<div className="w-full">
 			<div className="flex justify-center content-center gap-5">
 				<div className=" text-9xl text-orange-500">[</div>
-				{array.map((item) => {
+				{array.map((item, index) => {
 					return (
 						<div
-							key={item}
-							className="rounded h-24 w-24 bg-orange-200 grid place-items-center self-end"
+							key={index}
+							className="rounded  h-24 w-24 bg-orange-200 grid place-items-center self-end"
 						>
 							<ArrayItem item={item} />
+							<p className="font-bold text-xl  mt-3">{index}</p>
 						</div>
 					);
 				})}
-				<div className=" text-9xl text-orange-500">]</div>
+				<div className=" text-9xl text-orange-500 ">]</div>
 			</div>
 
-			<div className="flex gap-5 mt-10">
+			<div className="flex gap-5 mt-12">
 				<Push nextLetter={nextLetter} array={array} setArray={setArray} />
 				<Unshift nextLetter={nextLetter} array={array} setArray={setArray} />
 				<Pop array={array} setArray={setArray} />
