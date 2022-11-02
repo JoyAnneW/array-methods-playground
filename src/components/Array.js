@@ -8,7 +8,14 @@ import Splice from "./Splice";
 
 export default function Array() {
 	const [array, setArray] = useState(["A"]);
-	const nextLetter = (array.length + 10).toString(36).toUpperCase();
+	const [arrayLength, setArrayLength] = useState(1);
+
+	const increaseArrayLength = () => {
+		setArrayLength((arrayLength) => arrayLength + 1);
+	};
+
+	// nextLetter is not caluclated based on the index of the 'array' state array because the length changes after a removal, and the next letter goes back to what it was before the removal occured
+	const nextLetter = (arrayLength + 10).toString(36).toUpperCase();
 
 	return (
 		<div className="w-full">
@@ -28,12 +35,30 @@ export default function Array() {
 				<div className=" text-9xl text-orange-500 ">]</div>
 			</div>
 
-			<div className="flex gap-5 mt-12">
-				<Push nextLetter={nextLetter} array={array} setArray={setArray} />
-				<Unshift nextLetter={nextLetter} array={array} setArray={setArray} />
+			<div className="flex gap-5 mt-16">
+				<Push
+					nextLetter={nextLetter}
+					array={array}
+					setArray={setArray}
+					increaseArrayLength={increaseArrayLength}
+				/>
+				<Unshift
+					nextLetter={nextLetter}
+					array={array}
+					setArray={setArray}
+					increaseArrayLength={increaseArrayLength}
+				/>
 				<Pop array={array} setArray={setArray} />
 				<Shift array={array} setArray={setArray} />
+			</div>
+			<div className="flex gap-5 mt-5">
 				<Splice array={array} setArray={setArray} />
+				<Splice
+					array={array}
+					setArray={setArray}
+					nextLetter={nextLetter}
+					increaseArrayLength={increaseArrayLength}
+				/>
 			</div>
 		</div>
 	);

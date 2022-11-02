@@ -1,7 +1,13 @@
 import React from "react";
 
-export default function Push({ nextLetter, array, setArray }) {
+export default function Unshift({
+	nextLetter,
+	array,
+	setArray,
+	increaseArrayLength,
+}) {
 	const addToBeginning = () => {
+		increaseArrayLength();
 		setArray([nextLetter, ...array]);
 	};
 

@@ -1,7 +1,13 @@
 import React from "react";
 
-export default function Push({ nextLetter, array, setArray }) {
+export default function Push({
+	nextLetter,
+	array,
+	setArray,
+	increaseArrayLength,
+}) {
 	const addToEnd = () => {
+		increaseArrayLength();
 		setArray([...array, nextLetter]);
 	};
 
