@@ -26,7 +26,8 @@ export default function Array() {
 						<div
 							key={index}
 							className={`rounded  h-24 w-24 bg-orange-200 grid place-items-center self-end ${
-								item.hasExitBorder && "border-8 border-red-700 box-content"
+								item.hasExitBorder &&
+								"border-8 border-red-700 box-content animate-pulse"
 							}`}
 						>
 							<ArrayItem item={item} />
