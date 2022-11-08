@@ -8,7 +8,7 @@ export default function Push({
 }) {
 	const addToEnd = () => {
 		increaseArrayLength();
-		setArray([...array, nextLetter]);
+		setArray([...array, { letter: nextLetter, hasExitBorder: false }]);
 	};
 
 	return (

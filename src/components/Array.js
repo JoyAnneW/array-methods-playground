@@ -7,7 +7,7 @@ import Shift from "./Shift";
 import Splice from "./Splice";
 
 export default function Array() {
-	const [array, setArray] = useState(["A"]);
+	const [array, setArray] = useState([{ letter: "A", hasExitBorder: false }]);
 	const [arrayLength, setArrayLength] = useState(1);
 
 	const increaseArrayLength = () => {
@@ -19,13 +19,15 @@ export default function Array() {
 
 	return (
 		<div className="w-full">
-			<div className="flex justify-center content-center gap-5">
+			<div className="flex justify-center content-center gap-5 ">
 				<div className=" text-9xl text-orange-500">[</div>
 				{array.map((item, index) => {
 					return (
 						<div
 							key={index}
-							className="rounded  h-24 w-24 bg-orange-200 grid place-items-center self-end"
+							className={`rounded  h-24 w-24 bg-orange-200 grid place-items-center self-end ${
+								item.hasExitBorder && "border-8 border-red-700 box-content"
+							}`}
 						>
 							<ArrayItem item={item} />
 							<p className="font-bold text-xl  mt-3">{index}</p>

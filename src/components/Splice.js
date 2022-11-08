@@ -8,12 +8,10 @@ export default function Splice({
 }) {
 	const spliceArray = () => {
 		const arrayCopy = [...array];
-		// splice mutates arrayCopy, return value is an array with item removed
-		let splicedArray;
 
 		if (nextLetter) {
 			increaseArrayLength();
-			arrayCopy.splice(1, 1, nextLetter);
+			arrayCopy.splice(1, 1, { letter: nextLetter, hasExitBorder: false });
 		} else {
 			arrayCopy.splice(1, 1);
 		}

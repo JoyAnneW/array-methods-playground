@@ -8,7 +8,7 @@ export default function Unshift({
 }) {
 	const addToBeginning = () => {
 		increaseArrayLength();
-		setArray([nextLetter, ...array]);
+		setArray([{ letter: nextLetter, hasExitBorder: false }, ...array]);
 	};
 
 	return (
